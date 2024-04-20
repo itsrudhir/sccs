@@ -19,7 +19,7 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     center: true,
-    title: 'SCCS',
+    title: 'Software Component Cataloguing System',
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),

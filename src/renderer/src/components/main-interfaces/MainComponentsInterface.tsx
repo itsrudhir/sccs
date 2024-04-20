@@ -15,7 +15,7 @@ const MainComponentsInterface = (): JSX.Element => {
   }, [])
 
   return (
-    <ul className="bg-zinc-700 p-4 rounded-lg max-h-fit grid grid-flow-row grid-cols-3 gap-4 max-lg:grid-cols-2">
+    <ul className="bg-red-500 p-4 max-h-fit grid grid-flow-row grid-cols-3 gap-4 max-lg:grid-cols-2">
       {components &&
         components.map(({ id, catalogId, name, type, description, data }) => (
           <ComponentCard

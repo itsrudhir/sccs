@@ -1,59 +1,47 @@
 import Button from './components/Button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/components/ui/tabs'
 import { useState } from 'react'
-import CatalogsInterface from './components/main-interfaces/CatalogsInterface'
 import SearchInterface from './components/main-interfaces/SearchInterface'
 import MainComponentsInterface from './components/main-interfaces/MainComponentsInterface'
 
 function App(): JSX.Element {
-  const [activeTab, setActiveTab] = useState('catalogs')
+  const [activeTab, setActiveTab] = useState('components')
 
   return (
     <>
-      <Button text={'New Catalog'} link="/new-catalog" reactIcon={null} />
-      <div className="m-8"></div>
-      <Tabs defaultValue="catalogs" className="flex flex-col gap-8">
-        <TabsList className="bg-zinc-800 flex flex-row justify-between text-white font-semibold p-2 gap-2 rounded-lg">
+      <h1 className="text-center text-3xl font-semibold text-white mb-8">
+        Software Component Cataloguing System
+      </h1>
+      <Button text={'Create Component'} link="/components/new-component" reactIcon={null} />
+      <Tabs defaultValue="components" className="flex mt-8 flex-row w-full gap-8 items-start">
+        <TabsList className="bg-red-500 flex flex-col justify-between text-white font-semibold p-2 gap-2 min-w-64">
           <TabsTrigger
-            className={`w-full py-2 transition-colors rounded-lg ${activeTab === 'catalogs' ? 'bg-zinc-900' : 'bg-zinc-800'}`}
-            value="catalogs"
-            onClick={() => setActiveTab('catalogs')}
-          >
-            Catalogs
-          </TabsTrigger>
-          <TabsTrigger
-            className={`w-full py-2 transition-colors rounded-lg ${activeTab === 'search' ? 'bg-zinc-900' : 'bg-zinc-800'}`}
-            value="search"
-            onClick={() => setActiveTab('search')}
-          >
-            Search
-          </TabsTrigger>
-          <TabsTrigger
-            className={`w-full py-2 transition-colors rounded-lg ${activeTab === 'components' ? 'bg-zinc-900' : 'bg-zinc-800'}`}
+            className={`w-full text-lg py-4 ${activeTab === 'components' ? 'bg-red-800' : 'bg-red-500'}`}
             value="components"
             onClick={() => setActiveTab('components')}
           >
             Components
           </TabsTrigger>
+          <TabsTrigger
+            className={`w-full text-lg py-4 ${activeTab === 'search' ? 'bg-red-800' : 'bg-red-500'}`}
+            value="search"
+            onClick={() => setActiveTab('search')}
+          >
+            Search
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent
-          value="catalogs"
-          className="overflow-y-auto max-h-[28rem] rounded-lg scrollbar-none scrollbar-thumb-zinc-500 scrollbar-track-zinc-800"
+          value="components"
+          className="overflow-y-auto min-h-[28rem] scrollbar-none scrollbar-thumb-red-500 scrollbar-track-red-500 w-full"
         >
-          <CatalogsInterface />
+          <MainComponentsInterface />
         </TabsContent>
         <TabsContent
           value="search"
-          className="overflow-y-auto max-h-[28rem] rounded-lg scrollbar-none scrollbar-thumb-zinc-500 scrollbar-track-zinc-800"
+          className="overflow-y-auto max-h-[28rem] scrollbar-none scrollbar-thumb-red-500 scrollbar-track-red-500 w-full"
         >
           <SearchInterface />
-        </TabsContent>
-        <TabsContent
-          value="components"
-          className="overflow-y-auto max-h-[28rem] rounded-lg scrollbar-none scrollbar-thumb-zinc-500 scrollbar-track-zinc-800"
-        >
-          <MainComponentsInterface />
         </TabsContent>
       </Tabs>
     </>

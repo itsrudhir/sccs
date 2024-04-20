@@ -30,22 +30,20 @@ const ComponentInterface = (): JSX.Element => {
     <>
       <section className="text-white">
         <div className="flex justify-between">
-          <Button text="Go Back" link={`/catalogs/${component?.catalog_id}`} reactIcon={null} />
+          <Button text="Go Back" link="/" reactIcon={null} />
           <Button
             text="Delete Component"
             link={`/components/${component?.id}/delete-component`}
             reactIcon={null}
           />
         </div>
-        <div className="flex flex-col gap-8 my-8">
-          <h1 className="text-5xl font-bold">{component?.name}</h1>
-          <ul className="text-zinc-400">
-            <li>Created At: {component.created_at}</li>
-            <li>Last Accessed: {component.last_accessed}</li>
-          </ul>
+        <div className="flex gap-8 my-8 items-start">
+          <div className="flex flex-col gap-12 w-full">
+            <h1 className="text-5xl font-bold">{component?.name}</h1>
+            <p className="text-zinc-200 w-full">{component.description}</p>
+          </div>
+          <code className="bg-gray-700 text-white w-full p-8">{component.data}</code>
         </div>
-        <p className="text-zinc-200">{component.description}</p>
-        <pre className="bg-zinc-950 text-white w-full p-8 mt-8">{component.data}</pre>
       </section>
     </>
   )

@@ -20,11 +20,11 @@ const SearchInterface = (): JSX.Element => {
   )
 
   return (
-    <div className="bg-zinc-700 p-4 rounded-lg max-h-fit">
+    <div className="bg-red-500 p-4 max-h-fit">
       <input
         type="text"
-        placeholder="Search components..."
-        className="bg-zinc-800 text-white rounded-md mb-4 focus:outline-none w-full p-4 hover:bg-zinc-900 transition-colors focus:bg-zinc-900"
+        placeholder="Search"
+        className="bg-red-900 text-white mb-4 focus:outline-none w-full p-4 hover:bg-red-950 focus:bg-red-950"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />

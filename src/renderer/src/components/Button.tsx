@@ -10,7 +10,7 @@ const Button = ({ text, link, reactIcon }: ButtonProps): JSX.Element => {
   return (
     <Link
       to={link}
-      className="text-white bg-zinc-700 px-8 py-3 block text-center font-semibold rounded-lg hover:-translate-y-1 hover:bg-white hover:text-black focus:outline-none transition-all active:text-white active:bg-zinc-800 active:translate-y-1"
+      className="text-white bg-red-500 px-8 py-3 block text-center font-semibold hover:bg-red-700 focus:outline-none active:bg-red-800"
     >
       {reactIcon} {text}
     </Link>
